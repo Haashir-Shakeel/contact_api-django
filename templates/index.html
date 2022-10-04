@@ -23,6 +23,17 @@
     {% endif %} 
         
        </div>
-    </div>
+    <form id="post-form" method="POST" action="{% url 'formsubmit' %}">
+    {% csrf_token %}
+    <label>name</label>
+    <input type="text" name="name" id="name"/> 
+    <label>email</label>
+    <input type="email" name="email" id="email"/>
+    <label>phone</label>
+    <input type="tel" id="phone" name="phone" required/>
+    <button>Submit</button>
+
+    </form>
+
 </body>
 </html>
