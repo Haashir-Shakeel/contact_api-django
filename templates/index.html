@@ -15,6 +15,16 @@
     <p>{{contact}}</p>
     <p>{{contact.email}}</p>
     <p>{{contact.phone}}</p>
+    <br>
+    <form id="detail-contact" method="POST" action="{% url 'detailContact' contact.id %}">
+    {% csrf_token %}
+    <button>Detail</button>
+    </form>
+    <br>
+    <form id="delete-contact" method="POST" action="{% url 'deleteContact' contact.id %}">
+        {% csrf_token %}
+        <button>Delete</button>
+        </form>
     <hr>
 
     {% endfor %}
