@@ -12,6 +12,22 @@
        <p> {{data.name}}</p>
        <p> {{data.email}}</p>
        <p> {{data.phone}}</p>
+       <p> {{data.id}}</p>
+       
+    </div>
+
+    <div>
+        <form id="update-form" method="POST" action='{% url 'updateContact' data.id %}'>
+            {% csrf_token %}
+            <label>name</label>
+            <input type="text" name="name" id="name"/> 
+            <label>email</label>
+            <input type="email" name="email" id="email"/>
+            <label>phone</label>
+            <input type="tel" id="phone" name="phone" required/>
+            <button>Submit</button>
+        
+            </form>
     </div>
 </body>
 </html>
